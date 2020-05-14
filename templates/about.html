@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Attendence Management System</title>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script type="text/javascript">
+
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+
+
+</script>
+
+
+
+
+	<style >
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url(https://fonts.googleapis.com/css?family=Leckerli+One);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.a1{
+	width: 100%;
+	height: 110px;
+	background-color: #0036FF;
+	position: fixed;
+	z-index: 1;
+}
+
+#wrapper{
+  width: 80%;
+  height: 800px;
+  background: rgba(40,57,101,.9);
+  font-family: 'Montserrat', sans-serif;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+  border-radius: 20%;
+
+}
+
+
+h1{ 
+  font-family: 'Open Sans', sans-serif;
+  color: #FEFEFE;
+  margin-top: 0; 
+  margin-left: 400px;
+  width: 100%;
+  font-family: 'Leckerli One', cursive;
+  text-shadow: 0 2px rgba(0,0,0,.5);
+  font-size: 80px;
+}
+
+
+.row {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Leckerli One', cursive;
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 12px;
+  text-decoration: none;
+  font-size: 48px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 5px;
+  right: 45px;
+  font-size: 170px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 768px){
+.overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+/*return button */
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+
+/*content*/
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+    }
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("7.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+
+	</style>
+
+
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+</head>
+
+
+
+<body style="background-image: url('{{ url_for( 'static', filename='image/bg10.jpg') }}')">
+	
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="{{url_for('login')}}">HOME</a>
+    <a href="#">ABOUT</a>
+    <a href="{{url_for('contact')}}">CONTACT</a>
+  </div>
+</div>
+
+<div class="a1">
+	<span style="font-size:80px;color: #FEFEFE;cursor:pointer;position: fixed;top: 0px" onclick="openNav()">&#9776;</span>
+	<h1>Attend Mangement System </h1>
+
+<div id="wrapper" style=" margin-left: 10%;margin-bottom: 50px;" >
+
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:1000px;color: white;">
+      <h5 class="w3-center w3-padding-64" style="font-size: 40px;"><span class="w3-tag w3-wide">ABOUT THE WEBSITE</span></h5>
+      <p>Attendance management is the act of managing attendance or presence in a work setting to minimize loss due to employee downtime.</p>
+      <p>Attendance control has traditionally been approached using time clocks, timesheets, and time tracking software, but attendance management goes beyond this to provide a working environment which maximizes and motivates employee attendance.[1] Recently it has become possible to collect attendance data automatically through using real-time location systems, which also allow for cross-linking between attendance data and performance.</p>
+      <h3 style="font-size: 30px;">What is attendence management sytem?</h3>
+    <p>Tracking an employee's attendance is important to your company's profitability, reliability and reputation. Attendance is defined, quite simply, as showing up for work. But, how can you track it? By implementing well-defined policies and an attendance management software.</p>
+      <h3 style="font-size: 30px;">Why attendence management sytem?</h3>
+<p>Most organizations have already started riding the automated payroll wave. According to a survey conducted by the American Payroll Association, 65% of the organizations surveyed said they collected time and attendance using an automated system or were in the process of switching to an automated system.</p>
+      </div>
+</div>
+
+
+</body>
+</html>
